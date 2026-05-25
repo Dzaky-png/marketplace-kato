@@ -1,10 +1,9 @@
 # marketplace-kato
-# 🍱 KATO — Premium Fresh Food Website
+# 🍱 KATO — Premium Katsu Website
 
 KATO is a modern premium food ordering website built using HTML, CSS, and JavaScript.  
 This website provides a clean UI, animated colorful background, shopping cart system, and WhatsApp checkout integration for a smooth ordering experience.
 
----
 
 # ✨ Features
 
