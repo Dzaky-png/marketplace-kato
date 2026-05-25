@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kato | Premium Fresh Food</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- PREMIUM COLORFUL BACKGROUND -->
+    <div class="bg-blobs">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="blob b3"></div>
+        <div class="blob b4"></div>
+        <div class="blob b5"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo" onclick="showSection('home')">
+            KATO<span>.</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#" onclick="showSection('home')">Beranda</a></li>
+            <li><a href="#" onclick="showSection('shop')">Toko</a></li>
+            <li>
+                <a href="#" onclick="showSection('cart')">
+                    Keranjang (<span id="cart-count">0</span>)
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home" class="page">
+
+        <!-- HERO -->
+        <div class="hero">
+
+            <div class="hero-content">
+                <div class="badge">New Spring Menu 2026</div>
+
+                <h1>
+                    Taste the Modern <br>
+                    <span>Tradition.</span>
+                </h1>
+
+                <p>
+                    Kato brings artisanal, chef-crafted meals directly to your doorstep.
+                    We blend ancient recipes with modern nutrition.
+                </p>
+
+                <div class="hero-btns">
+                    <button class="btn" onclick="showSection('shop')">
+                        Order Now
+                    </button>
+
+                    <button class="btn btn-outline" onclick="scrollToAbout()">
+                        Our Story
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="logo.jpg" alt="Healthy Bowl">
+            </div>
+
+        </div>
+
+        <!-- FEATURES -->
+        <div class="features-section">
+            <div class="container">
+
+                <div class="features-grid">
+
+                    <div class="feature-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>100% Organic</h3>
+                        <p>Sourced from local sustainable farms.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h3>Instant Delivery</h3>
+                        <p>Freshly delivered via our eco-fleet.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <i class="fas fa-wallet"></i>
+                        <h3>Easy Pay</h3>
+                        <p>Pay with Dana, OVO, or GoPay.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div id="about-section" class="about-section">
+            <div class="container">
+
+                <div class="about-wrapper">
+
+                    <div class="hero-image">
+                        <img src="foto3.jpeg" alt="Our Kitchen">
+                    </div>
+
+                    <div class="about-text">
+                        <span class="subtitle">OUR MISSION</span>
+
+                        <h2>Clean Food for a Fast Life</h2>
+
+                        <p>
+                            Kato was founded to prove that fast food doesn't have to be
+                            "junk" food. We use zero processed sugars and only organic ingredients.
+                        </p>
+
+                        <button class="btn" onclick="showSection('shop')">
+                            View Menu
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- SHOP -->
+    <section id="shop" class="page" style="display:none;">
+        <div class="container">
+
+            <h2 class="section-title">Our Menu</h2>
+
+            <div class="product-grid" id="product-grid"></div>
+
+        </div>
+    </section>
+
+    <!-- PRODUCT DETAIL -->
+    <section id="product-detail" class="page" style="display:none;">
+        <div class="container">
+
+            <button class="back-btn" onclick="showSection('shop')">
+                ← Back to Shop
+            </button>
+
+            <div class="detail-container" id="detail-content"></div>
+
+        </div>
+    </section>
+
+    <!-- CART -->
+    <section id="cart" class="page" style="display:none;">
+        <div class="container">
+
+            <h2 class="section-title">Your Cart</h2>
+
+            <div id="cart-items-container"></div>
+
+            <div class="cart-summary" id="cart-summary"></div>
+
+        </div>
+    </section>
+
+    <!-- CHECKOUT -->
+    <section id="checkout" class="page" style="display:none;">
+        <div class="container">
+
+            <h2 class="section-title">Checkout</h2>
+
+            <div class="checkout-wrapper">
+
+                <form id="checkout-form">
+
+                    <h3>1. Shipping Details</h3>
+
+                    <input type="text" placeholder="Full Name" required>
+
+                    <input type="email" placeholder="Email Address" required>
+
+                    <textarea placeholder="Full Address (Street, House No, City)" required></textarea>
+
+                    <h3>2. Choose E-Wallet</h3>
+
+                    <div class="payment-grid">
+
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="Dana" checked>
+
+                            <div class="pay-card dana">
+                                <img src="dana.jpg" alt="Dana">
+                                <span>DANA</span>
+                            </div>
+                        </label>
+
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="OVO">
+
+                            <div class="pay-card ovo">
+                                <img src="ovo.jpg" alt="OVO">
+                                <span>OVO</span>
+                            </div>
+                        </label>
+
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="GoPay">
+
+                            <div class="pay-card gopay">
+                                <img src="gopayy.jpg" alt="GoPay">
+                                <span>GoPay</span>
+                            </div>
+                        </label>
+
+                    </div>
+
+                    <div id="ewallet-phone-input">
+
+                        <p style="margin-top:20px; font-size:0.9rem; color:#666;">
+                            Enter your E-Wallet Phone Number:
+                        </p>
+
+                        <input type="tel" placeholder="0812-XXXX-XXXX" required>
+
+                    </div>
+
+                    <button type="submit"
+                        class="btn checkout-submit-btn"
+                        style="width:100%; margin-top:30px;">
+                        Pay Now
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    KATO<span>.</span>
+                </div>
+
+                <p>
+                    Premium ingredients, sustainably sourced,
+                    and delivered fresh to your door.
+                    Taste the modern tradition.
+                </p>
+
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h4>Explore</h4>
+
+                <ul>
+                    <li><a href="#" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#" onclick="showSection('shop')">Menu</a></li>
+                    <li><a href="#" onclick="showSection('cart')">Your Cart</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-contact">
+
+                <h4>Support</h4>
+
+                <p><i class="fas fa-envelope"></i> help@kato.com</p>
+
+                <p><i class="fas fa-phone"></i> +62 896-2327-9158</p>
+
+                <p><i class="fas fa-map-marker-alt"></i> Bangka Belitung, Indonesia</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kato Food. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
