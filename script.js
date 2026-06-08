@@ -10,6 +10,8 @@ const products = [
     { id: 8, name: "Dark Chocolate Milk", price: 20000, category: "Drinks", img: "dark.jpeg", desc: "Dark Chocolate Milk — A bold and creamy mix of fresh milk and rich dark chocolate, served chilled for a deep, slightly bitter-sweet and indulgent flavor.." },
     { id: 9, name: "Crispy French Fries", price: 15000, category: "Bowls", img: "kentang.jpeg", desc: "GCrispy French Fries - Golden, crunchy potato fries served hot and perfectly seasoned for a simple, savory, and satisfying snack." },
     { id: 10, name: "Cheese Shrimp", price: 15000, category: "Snacks", img: "keju.jpeg", desc: "Cheese Shrimp - Crispy golden shrimp stuffed or coated with melted cheese, delivering a savory, creamy, and crunchy bite in every piece." },
+
+
 ];
 
 // 2. Load Cart from LocalStorage on Startup
@@ -166,12 +168,12 @@ document.getElementById('checkout-form').addEventListener('submit', (e) => {
     // %0A is a "New Line"
     const message = `*PESANAN BARU - KATO FOOD*%0A` +
                     `----------------------------%0A` +
-                    `*Nama:* ${name}%0A` +
-                    `*No. E-Wallet:* ${phone}%0A` +
-                    `*Alamat:* ${address}%0A%0A` +
-                    `*Pesanan:*%0A${itemList}%0A%0A` +
-                    `*Total Bayar:* Rp ${total.toLocaleString()}%0A` +
-                    `*Metode:* ${method}%0A` +
+                    `Nama: ${name}%0A` +
+                    `No. E-Wallet: ${phone}%0A` +
+                    `Alamat: ${address}%0A%0A` +
+                    `Pesanan:%0A${itemList}%0A%0A` +
+                    `Total Bayar: Rp ${total.toLocaleString()}%0A` +
+                    `Metode: ${method}%0A` +
                     `----------------------------%0A` +
                     `Mohon segera diproses ya!`;
 
@@ -198,3 +200,5 @@ document.getElementById('checkout-form').addEventListener('submit', (e) => {
 // INITIALIZE APP
 renderProducts();
 updateCartBadge(); // Ensure the count is correct on load
+
+
