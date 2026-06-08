@@ -97,11 +97,11 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 
 /* Target the image inside the hero-image div */
 .hero-image img {
-    width: 400px;           
-    height: auto;            
-    border-radius: 30px;    
-    object-fit: cover;       
-    
+    width: 280px; /* sesuaikan */
+    height: 280px;
+    object-fit: cover;
+    border-radius: 30px;
+
    
 }
 .product-card img {
@@ -295,4 +295,26 @@ body::after{
     transparent 60%);
     z-index: -1;
     pointer-events: none;
+}
+
+/* Mengatur agar layout detail rapi (side-by-side) */
+.detail-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Agar responsif ke bawah di layar kecil */
+}
+
+/* Membatasi ukuran gambar di dalam detail */
+.detail-container img {
+    width: 100%;
+    max-width: 300px; /* sebelumnya 450px */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+/* Mengatur agar teks detail proporsional */
+.detail-info {
+    flex: 1;
+    min-width: 300px;
 }
